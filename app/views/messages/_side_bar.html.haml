@@ -1,0 +1,23 @@
+.chat-side
+  .side-header
+    .side-header__box
+      .p.user-name
+        masa
+      %ul.menu
+        %li.menu__new-group
+          =link_to "#", class: "menu__new-group" do
+            = icon('fa', 'edit')
+        %li.menu__edit-user
+          =link_to "#", class: "menu__edit-user" do
+            = icon('fa', 'cog')
+  .side-groups
+    .side-groups__group
+      %p.group-name
+        techcamp
+      %p.latest-message
+        メッセージはありません
+    .side-groups__group
+      %p.group-name
+        techcamp
+      %p.latest-message
+        本日も学習中
