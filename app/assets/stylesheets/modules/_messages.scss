@@ -106,7 +106,7 @@
     }
   }
   .main-messages {
-    background-color: $light-gray;
+    background-color: $lightgray;
     width: calc(100vw - 300px);
     height: calc(100vh - 190px);
     padding: 35px 40px;
@@ -170,7 +170,7 @@
         height: 50px;
         margin-left: 15px;
         background-color: $light-blue;
-        color: $light-gray;
+        color: $lightgray;
         cursor: pointer;
       }
     }
