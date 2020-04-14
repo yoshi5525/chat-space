@@ -47,7 +47,6 @@
     width: 300px;
     height: calc(100vh - 100px);
     color: $white-color;
-    font-weight: bold;
     padding: 20px;
     box-sizing: border-box;
     &__group {
@@ -175,4 +174,9 @@
       }
     }
   }
+}
+
+a{
+  color: white;
+  text-decoration: none;
 }
