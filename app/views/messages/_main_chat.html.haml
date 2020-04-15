@@ -2,34 +2,22 @@
   .main-header
     .left-box
       %p.current-group
-        test
-      %ul.member-list
-        %li.member-list__number
-          Member : name
-    =link_to "#", class: "edit-btn" do
-      Edit
+        = @group.name
+      %ul.member-lists
+        Member：
+        - @group.users.each do |user|
+          %li.member-lists__list
+            = user.name
+    = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
   .main-messages
     .message
-      .message__info
-        .p.message__info__talker
-          masa
-        .p.message__info__date
-          2019/11/20(Wed) 17:43:01
-      .p.message__text
-        おはよう
-    .message
-      .message__info
-        .p.message__info__talker
-          masa
-        .p.message__info__date
-          2019/11/20(Wed) 17:43:34
-      .p.message__text
-        今日は夜から雨
+      = render @messages
   .main-form
-    %form.new-message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fa', 'image')
-          %input{type: "file", class: "input-box__image__file"} 
-      %input{type: "submit", value: "Sned", class: "submit-btn"}
+    = form_for [@group, @message] do |f|
+      .new-message
+        = f.text_field :content, class: 'new-message__text', placeholder: "type a message"
+        .input-box
+          = f.label :image, class: 'input-box__image' do
+            = icon('fa', 'image')
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
